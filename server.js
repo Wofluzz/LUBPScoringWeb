@@ -26,6 +26,14 @@ app.get('/admin', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin.html'));
 });
 
+// Define routes for API endpoints
+app.post('/add-tournament', async (req, res) => {
+  const { name, date } = req.body;
+  const tournament = new Tournament({ name, date });
+  await tournament.save();
+  res.sendStatus(200);
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);

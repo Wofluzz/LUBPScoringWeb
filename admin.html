@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Admin Panel</title>
+  <title>Admin Login</title>
 </head>
 <body>
-  <h1>Admin Panel</h1>
-  <form id="tournament-form">
-    <input type="text" id="name" placeholder="Tournament Name" required>
-    <input type="date" id="date" required>
-    <button type="submit">Add Tournament</button>
+  <h1>Admin Login</h1>
+  <form id="login-form">
+    <input type="password" id="password" placeholder="Enter admin code" required>
+    <button type="submit">Login</button>
   </form>
   <script>
-    document.getElementById('tournament-form').addEventListener('submit', async (e) => {
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = document.getElementById('name').value;
-      const date = document.getElementById('date').value;
-      const response = await fetch('/add-tournament', {
+      const password = document.getElementById('password').value;
+      const response = await fetch('/admin-auth', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, date }),
+        body: JSON.stringify({ password }),
       });
       if (response.ok) {
-        alert('Tournament added!');
-        window.location.reload();
+        window.location.href = '/admin-panel.html';
       } else {
-        alert('Error adding tournament.');
+        alert('Incorrect code.');
       }
     });
   </script>

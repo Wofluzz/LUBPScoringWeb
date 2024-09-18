@@ -1,65 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Tournament Site</title>
-  <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Accueil - Tournoi</title>
 </head>
 <body>
-  <h1>Welcome to the Tournament Site</h1>
-
-  <!-- Section Participants -->
-  <section>
-    <h2>Participants</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Matches Played</th>
-          <th>Matches Won</th>
-          <th>Winning Palets</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% participants.forEach(participant => { %>
-          <tr>
-            <td><%= participant.name %></td>
-            <td><%= participant.matchesPlayed %></td>
-            <td><%= participant.matchesWon %></td>
-            <td><%= participant.winningPalets %></td>
-          </tr>
-        <% }) %>
-      </tbody>
-    </table>
-  </section>
-
-  <!-- Section Matches -->
-  <section>
-    <h2>Matches of the Day - <%= latestDay ? latestDay.date.toDateString() : 'No matches today' %></h2>
-    <% if (latestDay && latestDay.matches.length > 0) { %>
-      <table>
-        <thead>
-          <tr>
-            <th>Participant A</th>
-            <th>Participant B</th>
-            <th>Score A</th>
-            <th>Score B</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% latestDay.matches.forEach(match => { %>
-            <tr>
-              <td><%= match.participantA.name %></td>
-              <td><%= match.participantB.name %></td>
-              <td><%= match.pointsA %></td>
-              <td><%= match.pointsB %></td>
-            </tr>
-          <% }) %>
-        </tbody>
-      </table>
-    <% } else { %>
-      <p>No matches played today.</p>
-    <% } %>
-  </section>
-
+    <h1>Bienvenue au tournoi</h1>
+    <div id="participants-list">
+        <!-- Liste des participants sera injectée ici par JS -->
+    </div>
+    <script src="scripts/admin.js"></script>
 </body>
 </html>

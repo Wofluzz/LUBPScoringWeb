@@ -5,7 +5,7 @@ const path = require('path');
 
 const app = express();
 const port = 3000;
-const ADMIN_CODE = '0000'; // Remplacez ceci par votre code d'administration
+const ADMIN_CODE = 'aaaa'; // Remplacez ceci par votre code d'administration
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost/tournamentdb', {

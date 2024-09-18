@@ -1,31 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Admin Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Admin - Ajouter des participants</title>
 </head>
 <body>
-  <h1>Admin Login</h1>
-  <form id="login-form">
-    <input type="password" id="password" placeholder="Enter admin code" required>
-    <button type="submit">Login</button>
-  </form>
-  <script>
-    document.getElementById('login-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const password = document.getElementById('password').value;
-      const response = await fetch('/admin-auth', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ password }),
-      });
-      if (response.ok) {
-        window.location.href = '/admin-panel.html';
-      } else {
-        alert('Incorrect code.');
-      }
-    });
-  </script>
+    <h1>Admin - Ajouter un participant</h1>
+    
+    <form id="add-participant-form">
+        <label for="name">Nom du participant :</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">Ajouter</button>
+    </form>
+    
+    <script src="scripts/admin.js"></script>
 </body>
 </html>

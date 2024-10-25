@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titre de la page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers une feuille de style externe -->
+    <style>
+        /* Variables CSS globales */
+        :root {
+            --clr-primary: #35th56;
+            --clr-secondary: #222;
+            --font-main: 'Arial', sans-serif;
+        }
 
+        /* Styles de base */
+        body {
+            font-family: var(--font-main);
+            background-color: var(--clr-secondary);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--clr-primary);
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: var(--clr-primary);
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Titre de la page</h1>
+        <nav>
+            <a href="#section1">Section 1</a>
+            <a href="#section2">Section 2</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="section1">
+            <h2>Section 1</h2>
+            <p>Contenu de la première section.</p>
+        </section>
+
+        <section id="section2">
+            <h2>Section 2</h2>
+            <p>Contenu de la deuxième section.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon site web</p>
+    </footer>
+</body>
+</html>
